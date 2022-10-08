@@ -38,6 +38,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 
 	// Instead of directly writing the template on response writer,
 	// its written in this buffer.
+	// The second argument is any data that we want to pass on to the template. This would yeild a result of templates and template data and write to the buffer.
 	err := t.Execute(buf, td)
 	if err != nil {
 		log.Println(err)

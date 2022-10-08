@@ -46,6 +46,10 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func (m *Repository) Login(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "login-page.html.tmpl", &models.TemplateData{})
+
+}
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	stringMap := make(map[string]string)
 	stringMap["test"] = "Hello, world"
